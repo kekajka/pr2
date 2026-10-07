@@ -1,0 +1,57 @@
+﻿<Window x:Class="Pr2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pr2"
+        mc:Ignorable="d"
+        Title="Практическая работа №2 - Вариант 14" Height="500" Width="550"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" VerticalAlignment="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть таблицу..." Click="MenuOpen_Click"/>
+                <MenuItem Header="Сохранить таблицу..." Click="MenuSave_Click"/>
+            </MenuItem>
+            <MenuItem Header="Действия">
+                <MenuItem Header="Заполнить случайно" Click="Заполнить_Click"/>
+                <MenuItem Header="Рассчитать задачу" Click="Рассчитать_Click"/>
+                <MenuItem Header="Очистить всё" Click="MenuClear_Click"/>
+            </MenuItem>
+            <MenuItem Header="О программе" Click="MenuAbout_Click"/>
+        </Menu>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="180"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid Name="dataGrid" AutoGenerateColumns="True" Margin="5" CanUserAddRows="False"/>
+
+            <StackPanel Grid.Column="1" Margin="10,5,5,5">
+                <Label Content="Количество строк (M):"/>
+                <TextBox Name="rowCount" Text="3" Margin="0,0,0,10"/>
+
+                <Label Content="Количество столбцов (N):"/>
+                <TextBox Name="columnCount" Text="3" Margin="0,0,0,10"/>
+
+                <Label Content="Диапазон чисел:"/>
+                <TextBox Name="diapazon" Text="15" Margin="0,0,0,10"/>
+
+                <Button Content="Заполнить матрицу" Click="Заполнить_Click" Height="30" Margin="0,0,0,10"/>
+                <Button Content="Рассчитать" Click="Рассчитать_Click" Height="30" Margin="0,0,0,15"/>
+
+                <Label Content="Результат:"/>
+                <TextBox Name="rez" IsReadOnly="True" Margin="0,0,0,30"/>
+
+                <Button Content="Выход" Click="MenuExit_Click" Height="30"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
