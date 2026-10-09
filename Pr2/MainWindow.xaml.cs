@@ -5,7 +5,6 @@ using System.Data;
 using System.Collections.Generic;
 using LibMas;
 using Lib_14;
-using Пример_таблицы_WPF;
 
 namespace Pr2
 {
@@ -22,7 +21,7 @@ namespace Pr2
         {
             if (!int.TryParse(diapazon.Text, out int randMax))
             {
-                MessageBox.Show("Диапазон должен быть целым числом");
+                MessageBox.Show("Диапазон должен быть");
                 return;
             }
 
